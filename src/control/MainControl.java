@@ -145,7 +145,7 @@ public class MainControl{
                 Parent parent = loader.load();
                 Stage stage = new Stage();
                 stage.setTitle("修改页面");
-                stage.setScene(new Scene(parent, 376, 514));
+                stage.setScene(new Scene(parent));
                 stage.setResizable(false);
                 stage.show();
             } catch (IOException e) {
@@ -193,6 +193,7 @@ public class MainControl{
         initialize();
         DialogUtil.showDialog("INFORMATION", "修改成功！！！");
         modify();
+        refresh();
     }
 
 
