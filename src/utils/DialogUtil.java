@@ -2,8 +2,8 @@ package utils;
 
 import javafx.scene.control.Alert;
 
-public class DialogUtil{
-    public static void showDialog(String type, String info){
+public class DialogUtil{    //显示各种类型dialog的工具
+    public static void showDialog(String type, String info){   //显示type类型的dialog，并显示info信息
         Alert alert = null;
         if (type.equals("INFORMATION")){
             alert = new Alert(Alert.AlertType.INFORMATION);

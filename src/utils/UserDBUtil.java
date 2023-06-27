@@ -5,11 +5,11 @@ import patterns.observer.Subject;
 
 import java.sql.*;
 
-public class UserDBUtil {
+public class UserDBUtil {     //用于与数据库用户表交互的工具
 
-    private static User user;
+    private static User user;    //用于记录登录的用户
 
-    private static Connection getConnection() {
+    private static Connection getConnection() {   //联检数据库中用户表
         ConnectionUtil.connect();
 
         Connection connection;
@@ -22,12 +22,12 @@ public class UserDBUtil {
         return connection;
     }
 
-    public static User getNowUser(){
+    public static User getNowUser(){     //返回当前登录的用户
         return UserDBUtil.user;
     }
 
 
-    public static void addUser(User user){
+    public static void addUser(User user){   //往用户表中插入一个新用户
         Connection connection = getConnection();
 
         try {
@@ -45,7 +45,7 @@ public class UserDBUtil {
 
     }
 
-    public static void removeUser(String account){
+    public static void removeUser(String account){   //从数据表中删除账号为account的用户
         Connection connection = getConnection();
 
         try{
@@ -59,7 +59,7 @@ public class UserDBUtil {
     }
 
 
-    public static void updateUser(){
+    public static void updateUser(){      //更新用户表中某用户的数据
         Connection connection = getConnection();
 
         try{
@@ -75,7 +75,7 @@ public class UserDBUtil {
 
     }
 
-    public static Boolean judgeRight(String account, String password){
+    public static Boolean judgeRight(String account, String password){    //判断用户表中是否存在账号为account，密码为password的用户
         Connection connection = getConnection();
 
         try{
@@ -106,7 +106,7 @@ public class UserDBUtil {
 
     }
 
-    public static Boolean judgeIfExits(String account){
+    public static Boolean judgeIfExits(String account){     //判断数据表中是否存在账号为aacount的用户
         Connection connection = getConnection();
 
         try{
@@ -124,7 +124,6 @@ public class UserDBUtil {
         }
 
     }
-
 
 
 
