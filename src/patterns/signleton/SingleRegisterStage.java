@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SingleRegisterStage {
+public class SingleRegisterStage {    //注册页面单例化
     private static Stage stage;
 
     public static Stage getStage(){

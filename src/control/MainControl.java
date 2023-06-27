@@ -63,7 +63,7 @@ public class MainControl{
 
 
     @FXML
-    public void initialize(){
+    public void initialize(){   //主页面的吃初始化
         setData();
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -76,7 +76,7 @@ public class MainControl{
 
     }
 
-    public void setData(){
+    public void setData(){    //实现"基本页面"的一些参数的写入
         User user = UserDBUtil.getNowUser();
         account.setText(user.getAccount());
         password.setText(user.getPassword());
@@ -85,7 +85,7 @@ public class MainControl{
     }
 
     @FXML
-    public void insert() {
+    public void insert() {     //实现点击"录入"后的逻辑
         Subject subject = new MySubject();
         Observer observer;
         String studentID = id.getText();
@@ -107,7 +107,7 @@ public class MainControl{
         refresh();
     }
 
-    public void clear() {
+    public void clear() {    //实现清空要录入的信息
         id.setText("");
         name.setText("");
         course.setText("");
@@ -116,7 +116,7 @@ public class MainControl{
 
 
 
-    public void delete() {
+    public void delete() {    //实现在tableView中选择一行进行删除的功能
         Student selectedStudent =  tableView.getSelectionModel().getSelectedItem();
         if(selectedStudent != null){
             StudentsCacheUtil.deleteStudent(selectedStudent);
@@ -125,7 +125,7 @@ public class MainControl{
         else    DialogUtil.showDialog("WARNING", "请选择要删除的学生！！！");
     }
 
-    public void save() {
+    public void save() {   //将当前存放的数据存入到数据库的功能的实现
         if (StudentsCacheUtil.getStudentList().isEmpty()){
             DialogUtil.showDialog("WARNING", "当前表中的数据为空！！！");
             return;
@@ -136,7 +136,7 @@ public class MainControl{
         refresh();
     }
 
-    public void update() {
+    public void update() {    //在tableView中选择一行进行数据修改的功能的实现
         Student selectedStudent = tableView.getSelectionModel().getSelectedItem();
         if(selectedStudent != null){
             UpdateDataControl.setStudent(selectedStudent);
@@ -161,9 +161,9 @@ public class MainControl{
 
     public void refresh() {
         tableView.refresh();
-    }
+    }   //tableView刷新
 
-    public void modify() {
+    public void modify() {     //实现在"基本信息"中点击"修改"后的一些逻辑
         if(confirm.isDisabled()){
             confirm.setDisable(false);
             password.setDisable(false);
@@ -178,7 +178,7 @@ public class MainControl{
         }
     }
 
-    public void check() {
+    public void check() {    //实现信息修改的逻辑
         String newPassword = password.getText();
         String newPhone = phone.getText();
         String newPostbox = postbox.getText();
@@ -192,8 +192,7 @@ public class MainControl{
         UserDBUtil.updateUser();
         initialize();
         DialogUtil.showDialog("INFORMATION", "修改成功！！！");
-        modify();
-        refresh();
+
     }
 
 

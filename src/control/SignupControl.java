@@ -24,7 +24,7 @@ public class SignupControl {
     @FXML
     private PasswordField password;
 
-    public void signup() {
+    public void signup() {   //实现注册时的一些逻辑
 
         String ac = account.getText();
         String pw = password.getText();
@@ -44,7 +44,7 @@ public class SignupControl {
         ((Stage) root.getScene().getWindow()).close();
     }
 
-    public void clear() {
+    public void clear() {  //清空各行输入的信息
         account.setText("");
         phone.setText("");
         postbox.setText("");

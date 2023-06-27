@@ -27,7 +27,7 @@ public class LoginControl {
 
 
     @FXML
-    public void login(){
+    public void login(){    //实现登录页面的逻辑 即账号或密码错误等
 
         String account = accountNumber.getText();
         String ps = password.getText();
@@ -60,5 +60,5 @@ public class LoginControl {
 
     public void signup() {
         SingleRegisterStage.getStage().show();
-    }
+    }    //点击"注册"，弹出注册页面
 }

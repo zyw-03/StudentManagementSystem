@@ -1,6 +1,6 @@
 package entity;
 
-public class User {
+public class User {     //用户类
     private String account;
     private String password;
     private String phone;

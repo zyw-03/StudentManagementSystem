@@ -26,16 +26,16 @@ public class UpdateDataControl {
 
     public static void setStudent(Student selectedStudent) {
         UpdateDataControl.student = selectedStudent;
-    }
+    }   //设置要修改的学生
 
-    public void initialize(){
+    public void initialize(){  //修改页面的吃初始化
         id.setText(student.getId());
         name.setText(student.getName());
         course.setText(student.getCourse());
         score.setText(student.getScore());
     }
 
-    public void update() {
+    public void update() {   //实现修改功能的逻辑
         String newID = id.getText();
         String newName = name.getText();
         String newCourse = course.getText();

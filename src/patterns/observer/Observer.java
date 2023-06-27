@@ -6,8 +6,8 @@ import entity.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface Observer {
+public interface Observer {     //观察者
 
-    public void updateTableView();
+    public void updateTableView();   //更新tableView
 
 }
