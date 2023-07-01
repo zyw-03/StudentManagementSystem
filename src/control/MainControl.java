@@ -93,10 +93,22 @@ public class MainControl{
         String schoolCourse = course.getText();
         String studentScore = score.getText();
 
-        if (StringUtil.isEmpty(studentID)) DialogUtil.showDialog("WARNING", "请输入学生学号！！！");
-        else if (StringUtil.isEmpty(studentName)) DialogUtil.showDialog("WARNING", "请输入学生姓名！！！");
-        else if (StringUtil.isEmpty(schoolCourse)) DialogUtil.showDialog("WARNING", "请输入科目！！！");
-        else if (StringUtil.isEmpty(studentScore)) DialogUtil.showDialog("WARNING", "请输入学生成绩！！！");
+        if (StringUtil.isEmpty(studentID)){
+            DialogUtil.showDialog("WARNING", "请输入学生学号！！！");
+            return;
+        }
+        else if (StringUtil.isEmpty(studentName)){
+            DialogUtil.showDialog("WARNING", "请输入学生姓名！！！");
+            return;
+        }
+        else if (StringUtil.isEmpty(schoolCourse)){
+            DialogUtil.showDialog("WARNING", "请输入科目！！！");
+            return;
+        }
+        else if (StringUtil.isEmpty(studentScore)){
+            DialogUtil.showDialog("WARNING", "请输入学生成绩！！！");
+            return;
+        }
 
         Student student = new Student(studentID, studentName, schoolCourse, studentScore);
         clear();

@@ -24,6 +24,11 @@ public class SignupControl {
     @FXML
     private PasswordField password;
 
+    @FXML
+    public void initialize(){
+        clear();
+    }
+
     public void signup() {   //实现注册时的一些逻辑
 
         String ac = account.getText();

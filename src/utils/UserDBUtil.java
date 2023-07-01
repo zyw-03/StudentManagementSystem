@@ -115,8 +115,6 @@ public class UserDBUtil {     //用于与数据库用户表交互的工具
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-
-
             return resultSet.next();
 
         } catch (SQLException e) {
@@ -124,7 +122,5 @@ public class UserDBUtil {     //用于与数据库用户表交互的工具
         }
 
     }
-
-
 
 }
